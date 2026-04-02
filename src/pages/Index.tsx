@@ -1,16 +1,42 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from 'react';
+import AuthPage from './AuthPage';
+import DisclaimerPage from './DisclaimerPage';
+import OnboardingPage from './OnboardingPage';
+import DashboardPage from './DashboardPage';
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
-  return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
-  );
+type AppState = 'auth' | 'disclaimer' | 'onboarding' | 'dashboard';
+
+const Index = () => {
+  const [state, setState] = useState<AppState>('auth');
+  const [userName, setUserName] = useState('');
+
+  // Simulated auth (Clerk integration requires publishable key)
+  const handleFakeAuth = () => setState('disclaimer');
+
+  if (state === 'auth') {
+    return (
+      <div onClick={handleFakeAuth}>
+        <AuthPage />
+      </div>
+    );
+  }
+
+  if (state === 'disclaimer') {
+    return <DisclaimerPage onAgree={() => setState('onboarding')} />;
+  }
+
+  if (state === 'onboarding') {
+    return (
+      <OnboardingPage
+        onComplete={(data) => {
+          setUserName(data.name || 'there');
+          setState('dashboard');
+        }}
+      />
+    );
+  }
+
+  return <DashboardPage userName={userName} />;
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
