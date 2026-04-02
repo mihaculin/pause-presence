@@ -7,6 +7,9 @@ export const translations = {
         signIn: "Sign in to continue",
         continueWithGoogle: "Continue with Google",
         continueWithApple: "Continue with Apple",
+        continueWithEmail: "Continue with email",
+        or: "or",
+        backToOptions: "Other sign-in options",
         language: "Language",
       },
       disclaimer: {
@@ -102,6 +105,9 @@ export const translations = {
         signIn: "Autentifică-te pentru a continua",
         continueWithGoogle: "Continuă cu Google",
         continueWithApple: "Continuă cu Apple",
+        continueWithEmail: "Continuă cu email",
+        or: "sau",
+        backToOptions: "Alte opțiuni de autentificare",
         language: "Limbă",
       },
       disclaimer: {
