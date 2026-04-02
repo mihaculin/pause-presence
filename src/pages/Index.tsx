@@ -1,42 +1,40 @@
 import { useState } from 'react';
+import { useUser, SignedIn, SignedOut } from '@clerk/clerk-react';
 import AuthPage from './AuthPage';
 import DisclaimerPage from './DisclaimerPage';
 import OnboardingPage from './OnboardingPage';
 import DashboardPage from './DashboardPage';
 
-type AppState = 'auth' | 'disclaimer' | 'onboarding' | 'dashboard';
+type PostAuthState = 'disclaimer' | 'onboarding' | 'dashboard';
 
 const Index = () => {
-  const [state, setState] = useState<AppState>('auth');
+  const { user } = useUser();
+  const [postAuthState, setPostAuthState] = useState<PostAuthState>('disclaimer');
   const [userName, setUserName] = useState('');
 
-  // Simulated auth (Clerk integration requires publishable key)
-  const handleFakeAuth = () => setState('disclaimer');
-
-  if (state === 'auth') {
-    return (
-      <div onClick={handleFakeAuth}>
+  return (
+    <>
+      <SignedOut>
         <AuthPage />
-      </div>
-    );
-  }
-
-  if (state === 'disclaimer') {
-    return <DisclaimerPage onAgree={() => setState('onboarding')} />;
-  }
-
-  if (state === 'onboarding') {
-    return (
-      <OnboardingPage
-        onComplete={(data) => {
-          setUserName(data.name || 'there');
-          setState('dashboard');
-        }}
-      />
-    );
-  }
-
-  return <DashboardPage userName={userName} />;
+      </SignedOut>
+      <SignedIn>
+        {postAuthState === 'disclaimer' && (
+          <DisclaimerPage onAgree={() => setPostAuthState('onboarding')} />
+        )}
+        {postAuthState === 'onboarding' && (
+          <OnboardingPage
+            onComplete={(data) => {
+              setUserName(data.name || user?.firstName || 'there');
+              setPostAuthState('dashboard');
+            }}
+          />
+        )}
+        {postAuthState === 'dashboard' && (
+          <DashboardPage userName={userName} />
+        )}
+      </SignedIn>
+    </>
+  );
 };
 
 export default Index;
