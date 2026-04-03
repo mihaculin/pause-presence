@@ -1,5 +1,5 @@
 -- ─────────────────────────────────────────────────────────────────────────────
--- PULZ — Auto-update triggers
+-- PulZ — Auto-update triggers
 -- ─────────────────────────────────────────────────────────────────────────────
 
 -- Generic function to stamp updated_at on any table

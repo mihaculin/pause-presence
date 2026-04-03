@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// PULZ Edge Function: self-training
+// PulZ Edge Function: self-training
 //
 // Builds a personal biomarker baseline per user by computing running statistics
 // over their historical readings. Called:

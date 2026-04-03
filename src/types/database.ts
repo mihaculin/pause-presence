@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// PULZ — Supabase Database Types
+// PulZ — Supabase Database Types
 // Keep in sync with supabase/migrations/001_initial_schema.sql
 // ─────────────────────────────────────────────────────────────────────────────
 

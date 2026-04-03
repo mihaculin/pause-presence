@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// PULZ Edge Function: episode-detection
+// PulZ Edge Function: episode-detection
 //
 // Analyzes a window of recent biomarker readings against the user's personal
 // baseline to produce an episode risk score.

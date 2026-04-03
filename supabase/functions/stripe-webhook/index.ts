@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// PULZ Edge Function: stripe-webhook
+// PulZ Edge Function: stripe-webhook
 //
 // Listens to Stripe events and keeps the `subscriptions` table in sync.
 // Uses the service role key — never exposes secrets to the browser.

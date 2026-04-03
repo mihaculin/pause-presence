@@ -1,9 +1,9 @@
 export const translations = {
   en: {
     translation: {
-      app: { name: "PULZ", tagline: "Between Impulse & Action" },
+      app: { name: "PulZ", tagline: "Between Impulse & Action" },
       auth: {
-        welcome: "Welcome to PULZ",
+        welcome: "Welcome to PulZ",
         signIn: "Sign in to continue",
         continueWithGoogle: "Continue with Google",
         continueWithApple: "Continue with Apple",
@@ -14,12 +14,12 @@ export const translations = {
       },
       disclaimer: {
         title: "Before we begin",
-        text: "PULZ is not a medical application and does not provide therapy or clinical diagnosis. It is a self-awareness tool designed to help you identify personal behavioral patterns. We encourage you to share your insights with a qualified therapist or healthcare professional.",
+        text: "PulZ is not a medical application and does not provide therapy or clinical diagnosis. It is a self-awareness tool designed to help you identify personal behavioral patterns. We encourage you to share your insights with a qualified therapist or healthcare professional.",
         agree: "I understand & agree",
       },
       onboarding: {
         welcome: {
-          title: "Welcome to PULZ",
+          title: "Welcome to PulZ",
           subtitle: "Your calm companion between impulse and action",
           begin: "Let's begin",
         },
@@ -48,7 +48,7 @@ export const translations = {
         },
         goals: {
           title: "Your goals",
-          subtitle: "What do you hope to gain from PULZ?",
+          subtitle: "What do you hope to gain from PulZ?",
           awareness: "Self-awareness",
           patterns: "Pattern recognition",
           therapySupport: "Support between therapy sessions",
@@ -80,7 +80,7 @@ export const translations = {
         complete: {
           title: "You're all set",
           subtitle: "Remember: every pause is a victory. We're here with you, one breath at a time.",
-          enter: "Enter PULZ",
+          enter: "Enter PulZ",
         },
         next: "Continue",
         back: "Back",
@@ -99,9 +99,9 @@ export const translations = {
   },
   ro: {
     translation: {
-      app: { name: "PULZ", tagline: "Între Impuls și Acțiune" },
+      app: { name: "PulZ", tagline: "Între Impuls și Acțiune" },
       auth: {
-        welcome: "Bine ai venit la PULZ",
+        welcome: "Bine ai venit la PulZ",
         signIn: "Autentifică-te pentru a continua",
         continueWithGoogle: "Continuă cu Google",
         continueWithApple: "Continuă cu Apple",
@@ -112,12 +112,12 @@ export const translations = {
       },
       disclaimer: {
         title: "Înainte de a începe",
-        text: "PULZ nu este o aplicație medicală și nu oferă terapie sau diagnostic clinic. Este un instrument de autocunoaștere conceput pentru a te ajuta să identifici tipare comportamentale personale. Te încurajăm să împărtășești descoperirile tale cu un terapeut calificat sau un profesionist în domeniul sănătății.",
+        text: "PulZ nu este o aplicație medicală și nu oferă terapie sau diagnostic clinic. Este un instrument de autocunoaștere conceput pentru a te ajuta să identifici tipare comportamentale personale. Te încurajăm să împărtășești descoperirile tale cu un terapeut calificat sau un profesionist în domeniul sănătății.",
         agree: "Înțeleg și sunt de acord",
       },
       onboarding: {
         welcome: {
-          title: "Bine ai venit la PULZ",
+          title: "Bine ai venit la PulZ",
           subtitle: "Companionul tău calm între impuls și acțiune",
           begin: "Să începem",
         },
@@ -146,7 +146,7 @@ export const translations = {
         },
         goals: {
           title: "Obiectivele tale",
-          subtitle: "Ce speri să obții de la PULZ?",
+          subtitle: "Ce speri să obții de la PulZ?",
           awareness: "Autocunoaștere",
           patterns: "Recunoașterea tiparelor",
           therapySupport: "Sprijin între ședințele de terapie",
@@ -178,7 +178,7 @@ export const translations = {
         complete: {
           title: "Ești pregătită",
           subtitle: "Amintește-ți: fiecare pauză este o victorie. Suntem aici cu tine, o respirație la un moment dat.",
-          enter: "Intră în PULZ",
+          enter: "Intră în PulZ",
         },
         next: "Continuă",
         back: "Înapoi",

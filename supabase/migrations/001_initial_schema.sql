@@ -1,5 +1,5 @@
 -- ─────────────────────────────────────────────────────────────────────────────
--- PULZ — Initial Database Schema
+-- PulZ — Initial Database Schema
 -- ─────────────────────────────────────────────────────────────────────────────
 -- RLS pattern: all user-owned tables use (auth.jwt() ->> 'sub') = clerk_id
 -- This requires Clerk JWT template to be configured in Supabase.

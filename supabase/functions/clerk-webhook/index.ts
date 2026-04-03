@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// PULZ Edge Function: clerk-webhook
+// PulZ Edge Function: clerk-webhook
 //
 // Receives Clerk webhook events and syncs user data to Supabase.
 // Uses the service role key to bypass RLS (server-side only).

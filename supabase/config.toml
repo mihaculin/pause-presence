@@ -48,7 +48,7 @@ enable_confirmations = false
 # ──────────────────────────────────────────────────────────────────────────────
 # Clerk JWT integration
 #
-# PULZ uses Clerk for authentication. Supabase must be configured to accept
+# PulZ uses Clerk for authentication. Supabase must be configured to accept
 # Clerk-issued JWTs so that Row Level Security policies can identify the user.
 #
 # Setup steps (one-time, in Supabase dashboard):
