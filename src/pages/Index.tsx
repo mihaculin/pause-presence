@@ -4,6 +4,7 @@ import AuthPage from './AuthPage';
 import DisclaimerPage from './DisclaimerPage';
 import OnboardingPage from './OnboardingPage';
 import DashboardPage from './DashboardPage';
+import FloatingActionButton from '@/components/FloatingActionButton';
 
 type PostAuthState = 'disclaimer' | 'onboarding' | 'dashboard';
 
@@ -17,6 +18,7 @@ const Index = () => {
       <SignedOut>
         <AuthPage />
       </SignedOut>
+
       <SignedIn>
         {postAuthState === 'disclaimer' && (
           <DisclaimerPage onAgree={() => setPostAuthState('onboarding')} />
@@ -30,7 +32,11 @@ const Index = () => {
           />
         )}
         {postAuthState === 'dashboard' && (
-          <DashboardPage userName={userName} />
+          <>
+            <DashboardPage userName={userName} />
+            {/* FAB lives here — independent of DashboardPage's render cycle */}
+            <FloatingActionButton />
+          </>
         )}
       </SignedIn>
     </>
