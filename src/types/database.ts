@@ -1,6 +1,6 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // PulZ — Supabase Database Types
-// Keep in sync with supabase/migrations/001_initial_schema.sql
+// Keep in sync with supabase/migrations/
 // ─────────────────────────────────────────────────────────────────────────────
 
 export type Json =
@@ -80,6 +80,34 @@ export type Database = {
         }
         Relationships: []
       }
+      notes: {
+        Row: {
+          id: string
+          clerk_id: string
+          content: string
+          is_important: boolean
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          clerk_id: string
+          content: string
+          is_important?: boolean
+          created_at?: string
+        }
+        Update: {
+          content?: string
+          is_important?: boolean
+        }
+        Relationships: [
+          {
+            foreignKeyName: 'notes_clerk_id_fkey'
+            columns: ['clerk_id']
+            referencedRelation: 'users'
+            referencedColumns: ['clerk_id']
+          }
+        ]
+      }
       episodes: {
         Row: {
           id: string
@@ -92,6 +120,12 @@ export type Database = {
           notes: string | null
           duration_minutes: number | null
           was_prevented: boolean
+          log_status: 'episode' | 'unsure' | 'avoided' | 'other' | null
+          log_status_other: string | null
+          emotions: string[]
+          what_triggered: string | null
+          what_i_was_doing: string | null
+          what_helped: string | null
           created_at: string
         }
         Insert: {
@@ -105,6 +139,12 @@ export type Database = {
           notes?: string | null
           duration_minutes?: number | null
           was_prevented?: boolean
+          log_status?: 'episode' | 'unsure' | 'avoided' | 'other' | null
+          log_status_other?: string | null
+          emotions?: string[]
+          what_triggered?: string | null
+          what_i_was_doing?: string | null
+          what_helped?: string | null
           created_at?: string
         }
         Update: {
@@ -116,6 +156,12 @@ export type Database = {
           notes?: string | null
           duration_minutes?: number | null
           was_prevented?: boolean
+          log_status?: 'episode' | 'unsure' | 'avoided' | 'other' | null
+          log_status_other?: string | null
+          emotions?: string[]
+          what_triggered?: string | null
+          what_i_was_doing?: string | null
+          what_helped?: string | null
         }
         Relationships: [
           {
@@ -340,6 +386,7 @@ export type UpdateTables<T extends keyof Database['public']['Tables']> =
   Database['public']['Tables'][T]['Update']
 
 export type UserProfile      = Tables<'users'>
+export type Note             = Tables<'notes'>
 export type Episode          = Tables<'episodes'>
 export type Device           = Tables<'devices'>
 export type BiomarkerReading = Tables<'biomarker_readings'>
